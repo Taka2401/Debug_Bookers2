@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get 'following_user/:id' => 'users#following', as: 'following_user'
   get 'followers_user/:id' => 'users#followers', as: 'followers_user'
 
+  get 'search' => 'search#search', as: 'search'
+
 
   devise_for :users
 
