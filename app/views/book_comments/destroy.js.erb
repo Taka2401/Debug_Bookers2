@@ -1,0 +1,3 @@
+
+$('#comments_area_<%= @book.id %>').html("<%= j(render partial: 'books/comment', locals: { book: @book }) %>");
+
