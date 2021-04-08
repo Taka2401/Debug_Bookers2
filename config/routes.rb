@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations',
+  }
+
   root 'homes#top'
   get 'home/about' => 'homes#about'
 
@@ -9,9 +14,6 @@ Rails.application.routes.draw do
   get 'followers_user/:id' => 'users#followers', as: 'followers_user'
 
   get 'search' => 'search#search', as: 'search'
-
-
-  devise_for :users
 
   resources :users,only: [:show,:index,:edit,:update]
 

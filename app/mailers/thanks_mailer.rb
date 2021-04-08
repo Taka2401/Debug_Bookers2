@@ -1,13 +1,6 @@
 class ThanksMailer < ApplicationMailer
-
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.thanks_mailer.greeting.subject
-  #
-  def greeting
-    @greeting = "Hi"
-
-    mail to: "testgoto234@gmail.com"
+  def complete_registration(user)
+    @user = user
+    mail(:subject => "登録完了のお知らせ", to: user.email)
   end
 end
